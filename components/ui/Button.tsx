@@ -32,7 +32,7 @@ export default function Button({
             className={`${baseStyles} ${variantStyles[variant]} ${className}`}
         >
             {children}
-            {icon && <ArrowRight className="w-5 h-5" />}
+            {icon && <ArrowRight className="w-5 h-5 text-primary" />}
         </button>
     );
 }
