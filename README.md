@@ -1,36 +1,162 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interior Design Landing Page
 
-## Getting Started
+A modern, responsive landing page built with Next.js 16 and Tailwind CSS v4, based on a Figma design system.
 
-First, run the development server:
+## 🎨 Design System
 
+This project implements a complete design system based on the provided Figma style guide:
+
+### Colors
+- **Primary Gold**: `#CDA274` - Used for accents, highlights, and CTAs
+- **Dark**: `#292F36` - Primary text and dark backgrounds
+- **Light Background**: `#F4F0EC` - Soft background color
+- **White**: `#FFFFFF` - Clean backgrounds
+- **Text Secondary**: `#4D5053` - Secondary text color
+
+### Typography
+- **Display Font**: DM Serif Display - Used for headings
+- **Body Font**: Jost - Used for body text and UI elements
+
+### Components
+Pre-built components include:
+- **Buttons**: Primary, Secondary, and Outline variants
+- **Container**: Max-width 1200px with responsive padding
+- **Sections**: Consistent spacing with `section` class
+- **Animations**: Fade-in animations ready to use
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ installed
+- npm or yarn package manager
+
+### Installation
+
+1. Navigate to the project directory:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd interior-design-landing
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies (if not already installed):
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Start the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+interior-design-landing/
+├── app/
+│   ├── globals.css          # Global styles & design system
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Home page
+├── public/                   # Static assets
+├── package.json              # Dependencies
+└── README.md                 # This file
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Design System Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Using Custom Colors
 
-## Deploy on Vercel
+In your components, use the CSS variables or Tailwind classes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```tsx
+// Using CSS variables
+<div style={{ backgroundColor: 'var(--color-primary)' }}>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+// Using utility classes
+<div className="bg-light text-dark">
+```
+
+### Using Buttons
+
+```tsx
+<button className="btn btn-primary">Primary Button</button>
+<button className="btn btn-secondary">Secondary Button</button>
+<button className="btn btn-outline">Outline Button</button>
+```
+
+### Typography
+
+```tsx
+<h1>Display Heading (DM Serif Display)</h1>
+<p>Body text (Jost font)</p>
+```
+
+## 🛠️ Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 📦 Tech Stack
+
+- **Framework**: Next.js 16.1.6
+- **Styling**: Tailwind CSS v4
+- **Language**: TypeScript
+- **React**: 19.2.3
+
+## 🎨 Customization
+
+### Adding New Colors
+
+Edit `app/globals.css` and add your color to the `:root` section:
+
+```css
+:root {
+  --color-custom: #yourcolor;
+}
+```
+
+### Adding New Components
+
+Create reusable components in a `components/` directory and import them in your pages.
+
+### Modifying Typography
+
+Update the Google Fonts import in `globals.css` or modify the font variables:
+
+```css
+--font-display: 'Your Display Font', serif;
+--font-body: 'Your Body Font', sans-serif;
+```
+
+## 📝 Next Steps
+
+1. **Add Components**: Create reusable components (Header, Footer, Hero, etc.)
+2. **Add Pages**: Create additional pages in the `app/` directory
+3. **Add Images**: Place images in the `public/` directory
+4. **Implement Sections**: Build out sections based on your Figma design
+5. **Add Animations**: Use the built-in fade-in class or add custom animations
+
+## 🌐 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import your repository on [Vercel](https://vercel.com)
+3. Vercel will automatically detect Next.js and deploy
+
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## 📄 License
+
+This project is private and proprietary.
+
+---
+
+**Built with ❤️ using Next.js and Tailwind CSS**
