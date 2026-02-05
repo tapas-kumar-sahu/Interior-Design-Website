@@ -9,30 +9,43 @@ import Button from '@/components/ui/Button';
 import PageHero from '@/components/ui/PageHero';
 import Newsletter from '@/components/sections/Newsletter';
 
-const services = [
+interface Service {
+    title: string;
+    slug: string;
+    description: string;
+    featured?: boolean;
+}
+
+const services: Service[] = [
     {
         title: "Project Plan",
+        slug: "project-plan",
         description: "There are many variations of the passages of lorem Ipsum from available, majority."
     },
     {
         title: "Interior Work",
+        slug: "interior-work",
         description: "There are many variations of the passages of lorem Ipsum from available, majority."
     },
     {
         title: "Retail Design",
+        slug: "retail-design",
         description: "There are many variations of the passages of lorem Ipsum from available, majority."
     },
     {
         title: "24/7 Architect",
+        slug: "architect-service",
         description: "There are many variations of the passages of lorem Ipsum from available, majority."
     },
     {
         title: "Decoration Work",
+        slug: "decoration-work",
         description: "There are many variations of the passages of lorem Ipsum from available, majority.",
         featured: true
     },
     {
         title: "Lighting Design",
+        slug: "lighting-design",
         description: "There are many variations of the passages of lorem Ipsum from available, majority."
     }
 ];
@@ -98,7 +111,7 @@ export default function ServicesPage() {
                                         {service.description}
                                     </p>
                                     <Link
-                                        href="/services/details"
+                                        href={`/services/${service.slug}`}
                                         className="inline-flex items-center gap-2 text-dark font-semibold hover:text-primary transition-colors"
                                     >
                                         Read More
