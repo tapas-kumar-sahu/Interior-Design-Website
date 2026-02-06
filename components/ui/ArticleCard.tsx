@@ -40,7 +40,7 @@ export default function ArticleCard({
             </div>
 
             {/* Article Title */}
-            <h3 className="text-dark mb-6 leading-snug font-display text-xl md:text-2xl min-h-[4rem] line-clamp-2">
+            <h3 className="text-dark mb-6 leading-snug font-display text-xl md:text-2xl min-h-16 line-clamp-2">
                 {title}
             </h3>
 

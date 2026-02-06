@@ -44,7 +44,12 @@
   /* Custom Tailwind Theme */
   --color-primary: #CDA274;
   --color-dark: #292F36;
+  --color-secondary: #4D5053;
   --color-light-bg: #F4F0EC;
+
+  --color-text-primary: #292F36;
+  --color-text-secondary: #4D5053;
+  --color-text-light: #CDA274;
 
   --font-display: 'DM Serif Display', serif;
   --font-body: 'Jost', sans-serif;
