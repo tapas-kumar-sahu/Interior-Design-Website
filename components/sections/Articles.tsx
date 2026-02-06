@@ -1,10 +1,7 @@
-'use client';
-
-import React, { useState } from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
-import { ChevronRight } from 'lucide-react';
+import ArticleCard from '../ui/ArticleCard';
 
 const articles = [
     {
@@ -28,8 +25,6 @@ const articles = [
 ];
 
 export default function Articles() {
-    const [hoveredIndex, setHoveredIndex] = useState<number | null>(1); // Default middle card active
-
     return (
         <section className="section">
             <Container>
@@ -41,39 +36,13 @@ export default function Articles() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {articles.map((article, index) => (
-                        <div
+                        <ArticleCard
                             key={index}
-                            className="group rounded-4xl p-6 transition-all duration-300 cursor-pointer border border-gray-200 hover:shadow-lg hover:bg-light-bg"
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(1)} // Return to middle card
-                        >
-                            {/* Article Image with Badge */}
-                            <div className="relative h-64 mb-6 rounded-t-4xl overflow-hidden">
-                                <Image
-                                    src={article.image}
-                                    alt={article.title}
-                                    fill
-                                    className="object-cover"
-                                />
-                                {/* Badge */}
-                                <div className="absolute bottom-4 left-4 bg-white px-4 py-2 rounded-t-lg rounded-br-lg">
-                                    <span className="text-sm text-dark">{article.badge}</span>
-                                </div>
-                            </div>
-
-                            {/* Article Title */}
-                            <h3 className="text-dark mb-6 leading-snug font-display text-xl">
-                                {article.title}
-                            </h3>
-
-                            {/* Date & Arrow */}
-                            <div className="flex items-center justify-between">
-                                <p className="text-secondary text-sm">{article.date}</p>
-                                <div className="w-10 h-10 rounded-full transition-colors flex items-center justify-center bg-light-bg group-hover:bg-white">
-                                    <ChevronRight className="w-5 h-5 text-dark" />
-                                </div>
-                            </div>
-                        </div>
+                            title={article.title}
+                            date={article.date}
+                            image={article.image}
+                            badge={article.badge}
+                        />
                     ))}
                 </div>
             </Container>
