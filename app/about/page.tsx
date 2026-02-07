@@ -9,6 +9,8 @@ import Button from '@/components/ui/Button';
 import SectionHeading from '@/components/ui/SectionHeading';
 import PageHero from '@/components/ui/PageHero';
 
+import TeamMemberFlipCard from '@/components/ui/TeamMemberFlipCard';
+
 const teamMembers = [
     {
         name: "Nattasha Julie",
@@ -154,45 +156,14 @@ export default function AboutPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {teamMembers.map((member, index) => (
-                                <div key={index} className="group perspective-1000 h-[400px]">
-                                    <div className="relative w-full h-full transition-transform duration-700 preserve-3d group-hover:rotate-y-180">
-                                        {/* Front Side (Image) */}
-                                        <div className="absolute inset-0 backface-hidden rotate-y-0 translate-z-front z-20">
-                                            <Image
-                                                src={member.image}
-                                                alt={member.name}
-                                                fill
-                                                className="object-cover rounded-[30px]"
-                                            />
-                                        </div>
-
-                                        {/* Back Side (Details) */}
-                                        <div className="absolute inset-0 backface-hidden rotate-y-back bg-white rounded-[30px] p-8 flex flex-col items-center justify-center text-center shadow-lg border border-gray-100 z-10">
-                                            <h3 className="text-2xl font-display text-dark mb-1">{member.name}</h3>
-                                            <p className="text-secondary text-sm mb-6">{member.role}</p>
-
-                                            <div className="flex gap-4 mb-8">
-                                                <a href="#" className="text-dark hover:text-primary transition-colors">
-                                                    <Facebook className="w-5 h-5" />
-                                                </a>
-                                                <a href="#" className="text-dark hover:text-primary transition-colors">
-                                                    <Twitter className="w-5 h-5" />
-                                                </a>
-                                                <a href="#" className="text-dark hover:text-primary transition-colors">
-                                                    <Linkedin className="w-5 h-5" />
-                                                </a>
-                                                <a href="#" className="text-dark hover:text-primary transition-colors">
-                                                    <Instagram className="w-5 h-5" />
-                                                </a>
-                                            </div>
-
-                                            <div className="text-secondary text-sm space-y-1">
-                                                <p>{member.phone}</p>
-                                                <p>{member.email}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <TeamMemberFlipCard
+                                    key={index}
+                                    name={member.name}
+                                    role={member.role}
+                                    image={member.image}
+                                    phone={member.phone}
+                                    email={member.email}
+                                />
                             ))}
                         </div>
                     </Container>
