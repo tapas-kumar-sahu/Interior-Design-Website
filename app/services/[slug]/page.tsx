@@ -99,7 +99,7 @@ export default function ServiceDetailPage() {
                     <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 p-4 md:p-8">
                         <button
                             onClick={() => setIsVideoOpen(false)}
-                            className="absolute top-8 right-8 text-white hover:text-primary transition-colors z-110"
+                            className="absolute top-20 right-20 text-white hover:text-primary transition-colors z-110"
                         >
                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

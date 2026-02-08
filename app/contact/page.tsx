@@ -32,7 +32,7 @@ export default function ContactPage() {
 
                             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
                                 {/* Contact Info Card */}
-                                <div className="lg:col-span-4 bg-light-bg rounded-[50px] p-8 md:p-12 space-y-10">
+                                <div className="lg:col-span-5 bg-light-bg rounded-[50px] p-8 md:p-12 space-y-10">
                                     <div className="space-y-8">
                                         <div className="flex items-center gap-4 group">
                                             <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
@@ -72,7 +72,7 @@ export default function ContactPage() {
                                 </div>
 
                                 {/* Contact Form */}
-                                <div className="lg:col-span-8">
+                                <div className="lg:col-span-7">
                                     <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                             <input

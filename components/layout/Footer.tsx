@@ -79,7 +79,7 @@ export default function Footer() {
             {/* Copyright */}
             <div className="pt-8 border-t border-gray-100 text-center">
                 <p className="text-secondary text-sm">
-                    Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow
+                    Copyright © Interno | All rights reserved {new Date().getFullYear()}
                 </p>
             </div>
         </footer>
