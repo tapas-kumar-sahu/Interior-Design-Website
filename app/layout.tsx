@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Jost } from "next/font/google";
 import "./globals.css";
+import BackToTop from "@/components/ui/BackToTop";
 
 const dmSerifDisplay = DM_Serif_Display({
   weight: "400",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${dmSerifDisplay.variable} ${jost.variable} antialiased`}
       >
         {children}
+        <BackToTop />
       </body>
     </html>
   );

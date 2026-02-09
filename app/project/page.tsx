@@ -8,6 +8,7 @@ import Container from '@/components/ui/Container';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/ui/PageHero';
+import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
 const categories = ['Bathroom', 'Bed Room', 'Kitchen', 'Living Area'];
 
@@ -114,54 +115,62 @@ export default function ProjectPage() {
                 <section className="py-24">
                     <Container>
                         {/* Category Filter */}
-                        <div className="flex justify-center mb-16 px-4">
-                            <div className="flex flex-wrap justify-center border border-primary rounded-2xl overflow-hidden p-1 md:p-0">
-                                {categories.map((category) => (
-                                    <button
-                                        key={category}
-                                        onClick={() => {
-                                            setActiveCategory(category);
-                                            setCurrentPage(1);
-                                        }}
-                                        className={`rounded-xl px-4 md:px-8 py-3 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${activeCategory === category
-                                            ? 'bg-primary text-white shadow-lg'
-                                            : 'text-dark hover:bg-light-bg'
-                                            }`}
-                                    >
-                                        {category}
-                                    </button>
-                                ))}
+                        <AnimateOnScroll direction="up" delay={0.2}>
+                            <div className="flex justify-center mb-16 px-4">
+                                <div className="flex flex-wrap justify-center border border-primary rounded-2xl overflow-hidden p-1 md:p-0">
+                                    {categories.map((category) => (
+                                        <button
+                                            key={category}
+                                            onClick={() => {
+                                                setActiveCategory(category);
+                                                setCurrentPage(1);
+                                            }}
+                                            className={`rounded-xl px-4 md:px-8 py-3 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${activeCategory === category
+                                                ? 'bg-primary text-white shadow-lg'
+                                                : 'text-dark hover:bg-light-bg'
+                                                }`}
+                                        >
+                                            {category}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        </AnimateOnScroll>
 
                         {/* Projects Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-16">
                             {filteredProjects.map((project, index) => (
-                                <div key={project.id} className="group cursor-pointer">
-                                    <div className="relative overflow-hidden mb-6 rounded-t-[30px] rounded-b-none lg:rounded-none">
-                                        {/* Dynamic Height Simulation for the masonry feel */}
-                                        <div className={`relative w-full ${index % 4 === 1 || index % 4 === 2 ? 'aspect-4/5' : 'aspect-square'}`}>
-                                            <Image
-                                                src={project.image}
-                                                alt={project.title}
-                                                fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                            />
+                                <AnimateOnScroll
+                                    key={`${project.id}-${activeCategory}`}
+                                    delay={(index % 4) * 0.1}
+                                    distance={30}
+                                >
+                                    <div className="group cursor-pointer">
+                                        <div className="relative overflow-hidden mb-6 rounded-t-[30px] rounded-b-none lg:rounded-none">
+                                            {/* Dynamic Height Simulation for the masonry feel */}
+                                            <div className={`relative w-full ${index % 4 === 1 || index % 4 === 2 ? 'aspect-4/5' : 'aspect-square'}`}>
+                                                <Image
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <div>
+                                                <h3 className="text-2xl font-display text-dark">{project.title}</h3>
+                                                <p className="text-secondary">{project.subCategory}</p>
+                                            </div>
+                                            <Link
+                                                href={`/project/${project.id}`}
+                                                className="w-12 h-12 rounded-full bg-light-bg flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300"
+                                            >
+                                                <ArrowRight className="w-5 h-5 text-dark" />
+                                            </Link>
                                         </div>
                                     </div>
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <h3 className="text-2xl font-display text-dark">{project.title}</h3>
-                                            <p className="text-secondary">{project.subCategory}</p>
-                                        </div>
-                                        <Link
-                                            href={`/project/${project.id}`}
-                                            className="w-12 h-12 rounded-full bg-light-bg flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300"
-                                        >
-                                            <ArrowRight className="w-5 h-5 text-dark" />
-                                        </Link>
-                                    </div>
-                                </div>
+                                </AnimateOnScroll>
                             ))}
                         </div>
 

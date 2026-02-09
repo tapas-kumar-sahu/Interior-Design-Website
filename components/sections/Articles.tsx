@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import ArticleCard from '../ui/ArticleCard';
+import AnimateOnScroll from '../ui/AnimateOnScroll';
 
 const articles = [
     {
@@ -28,21 +29,28 @@ export default function Articles() {
     return (
         <section className="section">
             <Container>
-                <SectionHeading
-                    title="Articles & News"
-                    subtitle="It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using."
-                    centered
-                />
+                <AnimateOnScroll>
+                    <SectionHeading
+                        title="Articles & News"
+                        subtitle="It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using."
+                        centered
+                    />
+                </AnimateOnScroll>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {articles.map((article, index) => (
-                        <ArticleCard
+                        <AnimateOnScroll
                             key={index}
-                            title={article.title}
-                            date={article.date}
-                            image={article.image}
-                            badge={article.badge}
-                        />
+                            delay={index * 0.2}
+                            distance={30}
+                        >
+                            <ArticleCard
+                                title={article.title}
+                                date={article.date}
+                                image={article.image}
+                                badge={article.badge}
+                            />
+                        </AnimateOnScroll>
                     ))}
                 </div>
             </Container>

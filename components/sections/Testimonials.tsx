@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import Image from 'next/image';
+import AnimateOnScroll from '../ui/AnimateOnScroll';
 
 const testimonials = [
     {
@@ -29,14 +30,18 @@ export default function Testimonials() {
         <section className="section">
             <Container>
                 <div className='bg-light rounded-4xl px-8 py-16'>
-                    <SectionHeading
-                        title="What the People Thinks About Us"
-                        centered
-                    />
+                    <AnimateOnScroll>
+                        <SectionHeading
+                            title="What the People Thinks About Us"
+                            centered
+                        />
+                    </AnimateOnScroll>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {testimonials.map((testimonial, index) => (
-                            <div
+                            <AnimateOnScroll
                                 key={index}
+                                delay={index * 0.15}
+                                distance={30}
                                 className="bg-white p-8 rounded-4xl"
                             >
                                 {/* Profile */}
@@ -62,7 +67,7 @@ export default function Testimonials() {
                                 <p className="text-secondary text-sm leading-relaxed">
                                     {testimonial.text}
                                 </p>
-                            </div>
+                            </AnimateOnScroll>
                         ))}
                     </div>
                 </div>

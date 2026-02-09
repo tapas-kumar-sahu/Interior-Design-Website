@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Button from '../ui/Button';
 import Container from '../ui/Container';
+import AnimateOnScroll from '../ui/AnimateOnScroll';
 
 export default function Hero() {
     return (
@@ -18,17 +19,19 @@ export default function Hero() {
 
                 {/* Content Overlay */}
                 <Container className="relative w-full px-6">
-                    <div className="max-w-xl">
-                        <h1 className="text-dark leading-tight mb-6 text-[50px] md:text-[65px] lg:text-[85px]">
-                            Let Your Home<br />Be Unique
-                        </h1>
-                        <p className="text-secondary text-lg mb-10 max-w-sm md:max-w-md">
-                            There are many variations of the passages of lorem Ipsum fromavailable,variations of the passages.
-                        </p>
-                        <Button icon>
-                            Get Started
-                        </Button>
-                    </div>
+                    <AnimateOnScroll delay={0.2}>
+                        <div className="max-w-xl">
+                            <h1 className="text-dark leading-tight mb-6 text-[50px] md:text-[65px] lg:text-[85px]">
+                                Let Your Home<br />Be Unique
+                            </h1>
+                            <p className="text-secondary text-lg mb-10 max-w-sm md:max-w-md">
+                                There are many variations of the passages of lorem Ipsum fromavailable,variations of the passages.
+                            </p>
+                            <Button icon>
+                                Get Started
+                            </Button>
+                        </div>
+                    </AnimateOnScroll>
                 </Container>
             </div>
         </section>

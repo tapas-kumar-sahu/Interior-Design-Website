@@ -7,6 +7,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/ui/PageHero';
 import Accordion from '@/components/ui/Accordion';
+import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
 const generalFaqs = [
     {
@@ -69,45 +70,57 @@ export default function FaqPage() {
                 />
 
                 {/* Section 1: Every Question Answered */}
-                <section className="py-24">
+                <section className="py-24 overflow-hidden">
                     <Container>
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-display text-dark">Every Question Answered</h2>
-                        </div>
+                        <AnimateOnScroll direction="up" delay={0.2}>
+                            <div className="text-center mb-16">
+                                <h2 className="text-4xl md:text-5xl font-display text-dark">Every Question Answered</h2>
+                            </div>
+                        </AnimateOnScroll>
+
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                            <div className="order-2 lg:order-1">
+                            <AnimateOnScroll direction="left" delay={0.4} className="order-2 lg:order-1">
                                 <Accordion items={generalFaqs} />
-                            </div>
-                            <div className="order-1 lg:order-2 relative h-[500px] w-full">
-                                <Image
-                                    src="/faq/question-answer.jpg"
-                                    alt="Questions and Answers"
-                                    fill
-                                    className="object-cover rounded-[50px]"
-                                />
-                            </div>
+                            </AnimateOnScroll>
+
+                            <AnimateOnScroll direction="right" delay={0.4} className="order-1 lg:order-2">
+                                <div className="relative h-[500px] w-full">
+                                    <Image
+                                        src="/faq/question-answer.jpg"
+                                        alt="Questions and Answers"
+                                        fill
+                                        className="object-cover rounded-[50px]"
+                                    />
+                                </div>
+                            </AnimateOnScroll>
                         </div>
                     </Container>
                 </section>
 
                 {/* Section 2: Project related questions */}
-                <section className="py-24 bg-white">
+                <section className="py-24 bg-white overflow-hidden">
                     <Container>
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-display text-dark">Project related questions</h2>
-                        </div>
+                        <AnimateOnScroll direction="up" delay={0.2}>
+                            <div className="text-center mb-16">
+                                <h2 className="text-4xl md:text-5xl font-display text-dark">Project related questions</h2>
+                            </div>
+                        </AnimateOnScroll>
+
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                            <div className="relative h-[500px] w-full">
-                                <Image
-                                    src="/faq/releated-question.jpg"
-                                    alt="Project related questions"
-                                    fill
-                                    className="object-cover rounded-[50px]"
-                                />
-                            </div>
-                            <div>
+                            <AnimateOnScroll direction="left" delay={0.4}>
+                                <div className="relative h-[500px] w-full">
+                                    <Image
+                                        src="/faq/releated-question.jpg"
+                                        alt="Project related questions"
+                                        fill
+                                        className="object-cover rounded-[50px]"
+                                    />
+                                </div>
+                            </AnimateOnScroll>
+
+                            <AnimateOnScroll direction="right" delay={0.4}>
                                 <Accordion items={projectFaqs} />
-                            </div>
+                            </AnimateOnScroll>
                         </div>
                     </Container>
                 </section>
