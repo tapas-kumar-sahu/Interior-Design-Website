@@ -2,25 +2,26 @@ import React from 'react';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import Image from 'next/image';
+import AnimateOnScroll from '../ui/AnimateOnScroll';
 
 const testimonials = [
     {
-        name: 'Nattasha Mith',
-        location: 'Sydney, USA',
+        name: 'Nalinikanta Nayak',
+        location: 'Patia, Bhubaneswar',
         image: '/testimonials/person1.png',
-        text: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.',
+        text: 'Interno transformed our Patia villa into a modern masterpiece. Their attention to detail and local sourcing was impressive.',
     },
     {
-        name: 'Raymond Galario',
-        location: 'Sydney, Australia',
+        name: 'Sasmita Roy',
+        location: 'Cuttack',
         image: '/testimonials/person2.png',
-        text: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled it to make a type book.',
+        text: 'The team understood exactly what we wanted for our Cuttack ancestral home renovation. Professional and highly creative!',
     },
     {
-        name: 'Benny Roll',
-        location: 'Sydney, New York',
+        name: 'Alok Patnaik',
+        location: 'Jayadev Vihar, Bhubaneswar',
         image: '/testimonials/person3.png',
-        text: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled.',
+        text: 'Best interior design firm in Odisha. They delivered our Infocity office project ahead of schedule with premium quality.',
     },
 ];
 
@@ -29,14 +30,18 @@ export default function Testimonials() {
         <section className="section">
             <Container>
                 <div className='bg-light rounded-4xl px-8 py-16'>
-                    <SectionHeading
-                        title="What the People Thinks About Us"
-                        centered
-                    />
+                    <AnimateOnScroll>
+                        <SectionHeading
+                            title="What the People Thinks About Us"
+                            centered
+                        />
+                    </AnimateOnScroll>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {testimonials.map((testimonial, index) => (
-                            <div
+                            <AnimateOnScroll
                                 key={index}
+                                delay={index * 0.15}
+                                distance={30}
                                 className="bg-white p-8 rounded-4xl"
                             >
                                 {/* Profile */}
@@ -62,7 +67,7 @@ export default function Testimonials() {
                                 <p className="text-secondary text-sm leading-relaxed">
                                     {testimonial.text}
                                 </p>
-                            </div>
+                            </AnimateOnScroll>
                         ))}
                     </div>
                 </div>

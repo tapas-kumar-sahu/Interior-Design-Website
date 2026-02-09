@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '../ui/Container';
 import { Lightbulb, Palette, CheckCircle, ArrowRight } from 'lucide-react';
+import AnimateOnScroll from '../ui/AnimateOnScroll';
 
 const features = [
     {
@@ -28,8 +29,9 @@ export default function Features() {
                     {features.map((feature, index) => {
                         const Icon = feature.icon;
                         return (
-                            <div
+                            <AnimateOnScroll
                                 key={index}
+                                delay={index * 0.2}
                                 className="text-center p-8 hover:shadow-lg transition-shadow rounded-lg"
                             >
                                 {/* Icon */}
@@ -55,7 +57,7 @@ export default function Features() {
                                     Read More
                                     <ArrowRight className="w-4 h-4" />
                                 </a>
-                            </div>
+                            </AnimateOnScroll>
                         );
                     })}
                 </div>

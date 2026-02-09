@@ -18,48 +18,48 @@ import TeamMemberFlipCard from '@/components/ui/TeamMemberFlipCard';
 // Mock data for team members
 const teamData: Record<string, any> = {
     '1': {
-        name: 'John Smith',
-        role: 'Designer',
-        image: '/team/member3.png',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Praesent at nibh in mi fringilla mattis.',
-        email: 'info@yourdomain.com',
-        phone: '+1 (234) 567-890',
-        website: 'www.yourdomain.com',
+        name: 'Subhashree Dash',
+        role: 'Senior Designer, Bhubaneswar',
+        image: '/team/member1.png',
+        bio: 'With over 8 years of experience in the Odisha interior design market, Subhashree specializes in blending modern minimalism with traditional aesthetics. She has led numerous luxury villa projects in Patia and Jayadev Vihar.',
+        email: 'subhashree@interno.in',
+        phone: '+91 977 777 7777',
+        website: 'www.interno.in',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' },
-            { platform: 'linkedin', url: '#' },
-            { platform: 'instagram', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' },
+            { platform: 'linkedin', url: 'https://linkedin.com' },
+            { platform: 'instagram', url: 'https://instagram.com' }
         ]
     },
     'default': {
-        name: 'Charlotte Levi',
-        role: 'Design, Australia',
-        image: '/team/member1.png',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Praesent at nibh in mi fringilla mattis.',
-        email: 'info@yourdomain.com',
-        phone: '+1 (234) 567-890',
-        website: 'www.yourdomain.com',
+        name: 'Biswajit Mohanty',
+        role: 'Lead Architect, Odisha',
+        image: '/team/member2.png',
+        bio: 'Biswajit is a visionary architect dedicated to creating sustainable and functional spaces across Bhubaneswar. His expertise in material sourcing within Odisha ensures premium quality for every turnkey project.',
+        email: 'biswajit@interno.in',
+        phone: '+91 977 777 7777',
+        website: 'www.interno.in',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' },
-            { platform: 'linkedin', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' },
+            { platform: 'linkedin', url: 'https://linkedin.com' }
         ]
     }
 };
 
 const qnaItems = [
     {
-        question: 'What is design excellence?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in.'
+        question: 'How do you ensure design excellence in Odisha?',
+        answer: 'We combine high-end design principles with meticulous local material selection, ensuring every project reflects premium standards while remaining durable in the regional climate.'
     },
     {
-        question: 'How to keep focus in projects?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in.'
+        question: 'How do you keep projects on track in Bhubaneswar?',
+        answer: 'Our dedicated site supervisors and project managers in Bhubaneswar oversee daily progress, ensuring timelines are met without compromising on quality.'
     },
     {
-        question: 'International Tools Experience?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in.'
+        question: 'What is your specialty in regional interiors?',
+        answer: 'We specialize in integrating traditional Odia elements—like stone work or ikat patterns—into sleek, modern minimalist frameworks.'
     }
 ];
 
@@ -150,9 +150,9 @@ export default function TeamSinglePage() {
                     <Container>
                         <div className="space-y-16">
                             <div className="max-w-4xl space-y-8">
-                                <h2 className="text-4xl font-display text-dark">Short Biography</h2>
+                                <h2 className="text-4xl font-display text-dark">Professional Journey</h2>
                                 <p className="text-secondary leading-relaxed text-lg">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio.
+                                    Our journey began in the heritage-rich city of Bhubaneswar with a simple mission: to elevate the standard of living through thoughtful, premium interior design. Today, we are proud to be the trusted partner for homeowners and businesses across Odisha.
                                 </p>
                             </div>
 
@@ -175,9 +175,9 @@ export default function TeamSinglePage() {
                                 {/* Q&A */}
                                 <div className="space-y-12">
                                     <div className="space-y-6">
-                                        <h3 className="text-3xl font-display text-dark">Question and Answer</h3>
+                                        <h3 className="text-3xl font-display text-dark">Excellence and Quality</h3>
                                         <p className="text-secondary leading-relaxed text-lg">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus.
+                                            We believe that a beautiful space is the result of perfect balance between aesthetics and functionality.
                                         </p>
                                     </div>
                                     <Accordion items={qnaItems} />
@@ -194,10 +194,10 @@ export default function TeamSinglePage() {
                             <h2 className="text-4xl font-display text-dark">Our Team Members</h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {[
-                                    { id: '1', name: 'Charlotte Levi', role: 'Design, Australia', image: '/team/member1.png' },
-                                    { id: '2', name: 'Nattasha Julie', role: 'Design, Australia', image: '/team/member2.png' },
-                                    { id: '3', name: 'John Smith', role: 'Design, Australia', image: '/team/member3.png' },
-                                    { id: '4', name: 'Nora Owen', role: 'Design, Australia', image: '/team/member4.png' }
+                                    { id: '1', name: 'Subhashree Dash', role: 'Senior Designer, Bhubaneswar', image: '/team/member1.png' },
+                                    { id: '2', name: 'Biswajit Mohanty', role: 'Lead Architect, Odisha', image: '/team/member2.png' },
+                                    { id: '3', name: 'Priyanka Mishra', role: 'Interior Specialist, Patia', image: '/team/member3.png' },
+                                    { id: '4', name: 'Amitav Patnaik', role: 'Project Manager, Bhubaneswar', image: '/team/member4.png' }
                                 ].map((member) => (
                                     <TeamMemberFlipCard
                                         key={member.id}

@@ -22,20 +22,20 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="text-secondary text-sm mb-6">
-                            It is a long established fact that a reader will be distracted lookings.
+                            Leading interior design firm in Bhubaneswar, specializing in premium residential and commercial spaces across Odisha.
                         </p>
                         {/* Social Icons */}
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://facebook.com" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                                 <Facebook className="w-5 h-5" />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://twitter.com" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                                 <Twitter className="w-5 h-5" />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://linkedin.com" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                                 <Linkedin className="w-5 h-5" />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                            <a href="https://instagram.com" className="w-10 h-10 rounded-full bg-light flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                                 <Instagram className="w-5 h-5" />
                             </a>
                         </div>
@@ -45,11 +45,11 @@ export default function Footer() {
                     <div>
                         <h4 className="font-display text-dark mb-4">Pages</h4>
                         <ul className="space-y-3">
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">About Us</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Our Projects</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Our Team</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Contact Us</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Services</a></li>
+                            <li><a href="/about" className="text-secondary hover:text-primary transition-colors text-sm">About Us</a></li>
+                            <li><a href="/project" className="text-secondary hover:text-primary transition-colors text-sm">Our Projects</a></li>
+                            <li><a href="/team" className="text-secondary hover:text-primary transition-colors text-sm">Our Team</a></li>
+                            <li><a href="/contact" className="text-secondary hover:text-primary transition-colors text-sm">Contact Us</a></li>
+                            <li><a href="/services" className="text-secondary hover:text-primary transition-colors text-sm">Services</a></li>
                         </ul>
                     </div>
 
@@ -57,11 +57,11 @@ export default function Footer() {
                     <div>
                         <h4 className="font-display text-dark mb-4">Services</h4>
                         <ul className="space-y-3">
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Kitchen</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Living Area</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Bathroom</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Dinning Hall</a></li>
-                            <li><a href="#" className="text-secondary hover:text-primary transition-colors text-sm">Bedroom</a></li>
+                            <li><a href="/services/kitchen" className="text-secondary hover:text-primary transition-colors text-sm">Kitchen</a></li>
+                            <li><a href="/services/living-area" className="text-secondary hover:text-primary transition-colors text-sm">Living Area</a></li>
+                            <li><a href="/services/bathroom" className="text-secondary hover:text-primary transition-colors text-sm">Bathroom</a></li>
+                            <li><a href="/services/dinning-hall" className="text-secondary hover:text-primary transition-colors text-sm">Dinning Hall</a></li>
+                            <li><a href="/services/bedroom" className="text-secondary hover:text-primary transition-colors text-sm">Bedroom</a></li>
                         </ul>
                     </div>
 
@@ -69,9 +69,9 @@ export default function Footer() {
                     <div>
                         <h4 className="font-display text-dark mb-4">Contact</h4>
                         <ul className="space-y-3">
-                            <li className="text-secondary text-sm">55 East Birchwood Ave. Brooklyn, New York 11201</li>
-                            <li><a href="mailto:contact@interno.com" className="text-secondary hover:text-primary transition-colors text-sm">contact@interno.com</a></li>
-                            <li><a href="tel:+1234567890" className="text-secondary hover:text-primary transition-colors text-sm">(123) 456 - 7890</a></li>
+                            <li className="text-secondary text-sm">Plot No. 122, Phase 2, Saheed Nagar, Bhubaneswar, Odisha 751007</li>
+                            <li><a href="mailto:hello@interno.in" className="text-secondary hover:text-primary transition-colors text-sm">hello@interno.in</a></li>
+                            <li><a href="tel:+919777777777" className="text-secondary hover:text-primary transition-colors text-sm">+91 977 777 7777</a></li>
                         </ul>
                     </div>
                 </div>

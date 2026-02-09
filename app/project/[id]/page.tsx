@@ -11,29 +11,28 @@ import PageHero from '@/components/ui/PageHero';
 
 const projectsData: Record<string, any> = {
     '1': {
-        title: 'Minimal Look Bedrooms',
-        client: 'Your client name',
-        category: 'Interiors',
-        tags: 'interior, Home',
-        date: 'Date 23,02, 2022',
-        link: 'Link example.com',
+        title: 'Luxury Villa in Patia',
+        client: 'Rajesh Mohapatra',
+        category: 'Residential Interiors',
+        tags: 'Modern, Luxury, Villa',
+        date: '15 January, 2024',
+        link: 'interno.in',
         description: [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Dojrices gravida dignissim. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo.",
-            "In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis. Donec ultrices tellus vitae iaculisvd porta. Proin tincidunt ligula id purus porttitor."
+            "This premium villa project in Patia, Bhubaneswar, reflects a perfect harmony between modern minimalist architecture and traditional Odia aesthetic touches. Our team focused on maximizing natural light and ventilation while maintaining a sophisticated, high-end look.",
+            "The client requested a space that was both welcoming for family gatherings and highly functional for a modern lifestyle. We used premium, weather-resistant materials sourced locally to ensure longevity and style."
         ],
         mainImage: '/projects/project-detail-magnifying.jpg'
     },
-    // Fallback/Default for other IDs
     'default': {
-        title: 'Project Details',
-        client: 'Internal Project',
-        category: 'Interior Design',
-        tags: 'Modern, Luxury',
-        date: 'October 24, 2023',
-        link: 'interno.com',
+        title: 'Modern Office in Infocity',
+        client: 'Infotech Solutions',
+        category: 'Commercial Interiors',
+        tags: 'Corporate, Minimalist, Workspace',
+        date: '20 October, 2023',
+        link: 'interno.in',
         description: [
-            "This project showcases our commitment to elegance and functional design. Each element has been carefully curated to provide a harmonious living experience.",
-            "We focus on sustainable materials and modern aesthetics to create spaces that are not only beautiful but also environmentally conscious."
+            "This corporate interior project in Infocity, Bhubaneswar, was designed to foster creativity and productivity among young tech professionals. The open-plan layout is balanced with private focus zones and vibrant collaborative spaces.",
+            "We integrated smart lighting and ergonomic furniture to create a workspace that is as functional as it is visually inspiring, setting a new benchmark for office design in Odisha."
         ],
         mainImage: '/projects/project-detail-magnifying.jpg'
     }

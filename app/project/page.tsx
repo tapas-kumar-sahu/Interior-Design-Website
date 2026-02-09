@@ -8,62 +8,63 @@ import Container from '@/components/ui/Container';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/ui/PageHero';
+import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
 const categories = ['Bathroom', 'Bed Room', 'Kitchen', 'Living Area'];
 
 const projectsData = [
     {
         id: 1,
-        title: 'Minimal Bedroom',
+        title: 'Luxury Villa in Patia',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project1.jpg',
     },
     {
         id: 2,
-        title: 'Minimal Bedroom',
+        title: 'Modern Apartment in Jayadev Vihar',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project2.jpg',
     },
     {
         id: 3,
-        title: 'Classic Minimal Bedroom',
+        title: 'Cozy Residency in Khandagiri',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project3.jpg',
     },
     {
         id: 4,
-        title: 'Modern Bedroom',
+        title: 'Urban Suite in Chandrasekharpur',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project4.jpg',
     },
     {
         id: 5,
-        title: 'Minimal Bedroom table',
+        title: 'Penthouse Bloom in Nayapalli',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project1.jpg',
     },
     {
         id: 6,
-        title: 'System Table',
+        title: 'Elite Living in Sahid Nagar',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project2.jpg',
     },
     {
         id: 7,
-        title: 'Modern Bedroom',
+        title: 'Serene Home in Sailashree Vihar',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project3.jpg',
     },
     {
         id: 8,
-        title: 'Modern Bedroom',
+        title: 'Majestic Manor in Rasulgarh',
         category: 'Bed Room',
         subCategory: 'Decor / Architecture',
         image: '/projects/project4.jpg',
@@ -71,21 +72,21 @@ const projectsData = [
     // Adding some fake data for other categories
     {
         id: 9,
-        title: 'Modern Bathroom',
+        title: 'Modern Spa in Infocity',
         category: 'Bathroom',
         subCategory: 'Decor / Architecture',
         image: '/projects/project1.jpg',
     },
     {
         id: 10,
-        title: 'Clean Kitchen',
+        title: 'Premium Kitchen in Patia Phase 2',
         category: 'Kitchen',
         subCategory: 'Decor / Architecture',
         image: '/projects/project2.jpg',
     },
     {
         id: 11,
-        title: 'Cozy Living Area',
+        title: 'Boutique Office in District Center',
         category: 'Living Area',
         subCategory: 'Decor / Architecture',
         image: '/projects/project3.jpg',
@@ -114,54 +115,62 @@ export default function ProjectPage() {
                 <section className="py-24">
                     <Container>
                         {/* Category Filter */}
-                        <div className="flex justify-center mb-16 px-4">
-                            <div className="flex flex-wrap justify-center border border-primary rounded-2xl overflow-hidden p-1 md:p-0">
-                                {categories.map((category) => (
-                                    <button
-                                        key={category}
-                                        onClick={() => {
-                                            setActiveCategory(category);
-                                            setCurrentPage(1);
-                                        }}
-                                        className={`rounded-xl px-4 md:px-8 py-3 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${activeCategory === category
-                                            ? 'bg-primary text-white shadow-lg'
-                                            : 'text-dark hover:bg-light-bg'
-                                            }`}
-                                    >
-                                        {category}
-                                    </button>
-                                ))}
+                        <AnimateOnScroll direction="up" delay={0.2}>
+                            <div className="flex justify-center mb-16 px-4">
+                                <div className="flex flex-wrap justify-center border border-primary rounded-2xl overflow-hidden p-1 md:p-0">
+                                    {categories.map((category) => (
+                                        <button
+                                            key={category}
+                                            onClick={() => {
+                                                setActiveCategory(category);
+                                                setCurrentPage(1);
+                                            }}
+                                            className={`rounded-xl px-4 md:px-8 py-3 md:py-4 text-sm md:text-lg font-medium transition-all duration-300 ${activeCategory === category
+                                                ? 'bg-primary text-white shadow-lg'
+                                                : 'text-dark hover:bg-light-bg'
+                                                }`}
+                                        >
+                                            {category}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        </AnimateOnScroll>
 
                         {/* Projects Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-16">
                             {filteredProjects.map((project, index) => (
-                                <div key={project.id} className="group cursor-pointer">
-                                    <div className="relative overflow-hidden mb-6 rounded-t-[30px] rounded-b-none lg:rounded-none">
-                                        {/* Dynamic Height Simulation for the masonry feel */}
-                                        <div className={`relative w-full ${index % 4 === 1 || index % 4 === 2 ? 'aspect-4/5' : 'aspect-square'}`}>
-                                            <Image
-                                                src={project.image}
-                                                alt={project.title}
-                                                fill
-                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                            />
+                                <AnimateOnScroll
+                                    key={`${project.id}-${activeCategory}`}
+                                    delay={(index % 4) * 0.1}
+                                    distance={30}
+                                >
+                                    <div className="group cursor-pointer">
+                                        <div className="relative overflow-hidden mb-6 rounded-t-[30px] rounded-b-none lg:rounded-none">
+                                            {/* Dynamic Height Simulation for the masonry feel */}
+                                            <div className={`relative w-full ${index % 4 === 1 || index % 4 === 2 ? 'aspect-4/5' : 'aspect-square'}`}>
+                                                <Image
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <div>
+                                                <h3 className="text-2xl font-display text-dark">{project.title}</h3>
+                                                <p className="text-secondary">{project.subCategory}</p>
+                                            </div>
+                                            <Link
+                                                href={`/project/${project.id}`}
+                                                className="w-12 h-12 rounded-full bg-light-bg flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300"
+                                            >
+                                                <ArrowRight className="w-5 h-5 text-dark" />
+                                            </Link>
                                         </div>
                                     </div>
-                                    <div className="flex items-center justify-between">
-                                        <div>
-                                            <h3 className="text-2xl font-display text-dark">{project.title}</h3>
-                                            <p className="text-secondary">{project.subCategory}</p>
-                                        </div>
-                                        <Link
-                                            href={`/project/${project.id}`}
-                                            className="w-12 h-12 rounded-full bg-light-bg flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300"
-                                        >
-                                            <ArrowRight className="w-5 h-5 text-dark" />
-                                        </Link>
-                                    </div>
-                                </div>
+                                </AnimateOnScroll>
                             ))}
                         </div>
 
