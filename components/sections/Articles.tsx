@@ -6,20 +6,20 @@ import AnimateOnScroll from '../ui/AnimateOnScroll';
 
 const articles = [
     {
-        title: "Let's Get Solution For Building Construction Work",
-        date: '26 December, 2022',
+        title: "Modern Kitchen Design Trends in Bhubaneswar Homes",
+        date: '15 January, 2024',
         image: '/articles/article1.jpg',
         badge: 'Kitchen Design',
     },
     {
-        title: 'Low Cost Latest Invented Interior Designing Ideas.',
-        date: '22 December, 2022',
+        title: 'Maximizing Space in 3BHK Apartments in Patia',
+        date: '10 January, 2024',
         image: '/articles/article2.jpg',
         badge: 'Living Design',
     },
     {
-        title: 'Best For Any Office & Business Interior Solution',
-        date: '25 December, 2022',
+        title: 'Interior Solutions for Growing Startups in Infocity',
+        date: '05 January, 2024',
         image: '/articles/article3.jpg',
         badge: 'Interior Design',
     },
@@ -32,7 +32,7 @@ export default function Articles() {
                 <AnimateOnScroll>
                     <SectionHeading
                         title="Articles & News"
-                        subtitle="It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using."
+                        subtitle="Explore the latest interior design insights and home improvement tips specifically for the modern residents of Odisha."
                         centered
                     />
                 </AnimateOnScroll>

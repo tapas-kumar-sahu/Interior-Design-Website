@@ -42,34 +42,34 @@ export default function ContactPage() {
                                                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
                                                     <Mail className="w-5 h-5" />
                                                 </div>
-                                                <span className="text-secondary text-lg">info@yourdomain.com</span>
+                                                <span className="text-secondary text-lg">hello@interno.in</span>
                                             </div>
                                             <div className="flex items-center gap-4 group">
                                                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
                                                     <Phone className="w-5 h-5" />
                                                 </div>
-                                                <span className="text-secondary text-lg">+1 (378) 400-1234</span>
+                                                <span className="text-secondary text-lg">+91 977 777 7777</span>
                                             </div>
                                             <div className="flex items-center gap-4 group">
                                                 <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm">
                                                     <Globe className="w-5 h-5" />
                                                 </div>
-                                                <span className="text-secondary text-lg">www.yourdomain.com</span>
+                                                <span className="text-secondary text-lg">www.interno.in</span>
                                             </div>
                                         </div>
 
                                         {/* Social Links */}
                                         <div className="flex items-center gap-6 pt-6 justify-center lg:justify-start">
-                                            <Link href="#" className="text-dark hover:text-primary transition-colors">
+                                            <Link href="https://facebook.com" className="text-dark hover:text-primary transition-colors">
                                                 <Facebook className="w-5 h-5" />
                                             </Link>
-                                            <Link href="#" className="text-dark hover:text-primary transition-colors">
+                                            <Link href="https://twitter.com" className="text-dark hover:text-primary transition-colors">
                                                 <Twitter className="w-5 h-5" />
                                             </Link>
-                                            <Link href="#" className="text-dark hover:text-primary transition-colors">
+                                            <Link href="https://linkedin.com" className="text-dark hover:text-primary transition-colors">
                                                 <Linkedin className="w-5 h-5" />
                                             </Link>
-                                            <Link href="#" className="text-dark hover:text-primary transition-colors">
+                                            <Link href="https://instagram.com" className="text-dark hover:text-primary transition-colors">
                                                 <Instagram className="w-5 h-5" />
                                             </Link>
                                         </div>
@@ -82,11 +82,13 @@ export default function ContactPage() {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                             <input
                                                 type="text"
+                                                name="name"
                                                 placeholder="Name"
                                                 className="w-full bg-transparent border-b border-dark/20 py-4 focus:border-primary outline-none transition-colors text-lg"
                                             />
                                             <input
                                                 type="email"
+                                                name="email"
                                                 placeholder="Email"
                                                 className="w-full bg-transparent border-b border-dark/20 py-4 focus:border-primary outline-none transition-colors text-lg"
                                             />
@@ -94,17 +96,20 @@ export default function ContactPage() {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                             <input
                                                 type="text"
+                                                name="subject"
                                                 placeholder="Subject"
                                                 className="w-full bg-transparent border-b border-dark/20 py-4 focus:border-primary outline-none transition-colors text-lg"
                                             />
                                             <input
                                                 type="tel"
+                                                name="phone"
                                                 placeholder="Phone"
                                                 className="w-full bg-transparent border-b border-dark/20 py-4 focus:border-primary outline-none transition-colors text-lg"
                                             />
                                         </div>
                                         <textarea
-                                            placeholder="Hello I am Intrested in.."
+                                            placeholder="Hello I am Interested in.."
+                                            name="message"
                                             rows={6}
                                             className="w-full bg-transparent border-b border-dark/20 py-4 focus:border-primary outline-none transition-colors resize-none text-lg"
                                         />
@@ -126,9 +131,9 @@ export default function ContactPage() {
                     <Container>
                         <AnimateOnScroll direction="up" delay={0.2}>
                             <div className="relative w-full h-[500px] rounded-[50px] overflow-hidden shadow-2xl">
-                                {/* Google Map with Dark Theme Filter */}
+                                {/* Google Map centered on Saheed Nagar, Bhubaneswar */}
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280821886!2d-74.11976373946229!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1675865231234!5m2!1sen!2sin"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.1585465223447!2d85.84277737525301!3d20.293672012615462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909f1df7ef963%3A0xe54911d13f508272!2sSaheed%20Nagar%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0, filter: 'grayscale(1) invert(0.9) contrast(1.2) brightness(0.8)' }}

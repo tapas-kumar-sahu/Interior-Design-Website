@@ -12,38 +12,38 @@ import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
 const blogArticles = [
     {
-        title: "Let's Get Solution For Building Construction Work",
-        date: '26 December, 2022',
+        title: "Modern Kitchen Design Trends in Bhubaneswar Homes",
+        date: '15 January, 2024',
         image: '/blog/blog1.jpg',
         badge: 'Kitchen Design',
     },
     {
-        title: 'Low Cost Latest Invented Interior Designing Ideas.',
-        date: '22 December, 2022',
+        title: 'Maximizing Space in 3BHK Apartments in Patia',
+        date: '10 January, 2024',
         image: '/blog/blog2.jpg',
         badge: 'Living Design',
     },
     {
-        title: 'Best For Any Office & Business Interior Solution',
-        date: '25 December, 2022',
+        title: 'Interior Solutions for Growing Startups in Infocity',
+        date: '05 January, 2024',
         image: '/blog/blog3.jpg',
         badge: 'Interior Design',
     },
     {
-        title: "Let's Get Solution For Building Construction Work",
-        date: '26 December, 2022',
+        title: "Creative Lighting Ideas for Odisha's Festive Season",
+        date: '28 December, 2023',
         image: '/blog/blog4.jpg',
         badge: 'Kitchen Design',
     },
     {
-        title: 'Low Cost Latest Invented Interior Designing Ideas.',
-        date: '22 December, 2022',
+        title: 'Sustainable Interior Materials Available in Odisha',
+        date: '22 December, 2023',
         image: '/blog/blog5.jpg',
         badge: 'Living Design',
     },
     {
-        title: 'Best For Any Office & Business Interior Solution',
-        date: '25 December, 2022',
+        title: 'How to Choose the Right Color Palette for Your Home',
+        date: '15 December, 2023',
         image: '/blog/blog6.jpg',
         badge: 'Interior Design',
     },
@@ -85,16 +85,16 @@ export default function BlogPage() {
                                     </div>
                                     <div className="space-y-6">
                                         <h3 className="text-3xl md:text-4xl font-display text-dark leading-tight">
-                                            Low Cost Latest Invented Interior <br className="hidden lg:block" /> Designing Ideas
+                                            The Evolution of Luxury <br className="hidden lg:block" /> Living in Bhubaneswar
                                         </h3>
                                         <p className="text-secondary text-lg leading-relaxed">
-                                            Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.
+                                            Discover how modern architecture and premium interior design are reshaping the skyline of Bhubaneswar, from the bustling streets of Patia to the serene corners of Jayadev Vihar.
                                         </p>
                                         <p className="text-secondary text-lg leading-relaxed">
-                                            Lorem Ipsum is not simply random text. It has roots in a piece of classical.
+                                            We explore the balance between traditional Odia aesthetics and contemporary global minimalist trends.
                                         </p>
                                         <div className="flex items-center justify-between pt-4">
-                                            <p className="text-secondary">26 December, 2022</p>
+                                            <p className="text-secondary">26 January, 2024</p>
                                             <div className="w-14 h-14 rounded-full bg-light-bg flex items-center justify-center transition-colors group-hover:bg-white text-dark shadow-sm">
                                                 <ChevronRight className="w-6 h-6" />
                                             </div>

@@ -10,84 +10,84 @@ import TeamMemberCard from '@/components/ui/TeamMemberCard';
 const teamMembers = [
     {
         id: '1',
-        name: 'Charlotte Levi',
-        role: 'Design, Australia',
+        name: 'Subhashree Dash',
+        role: 'Senior Designer, Bhubaneswar',
         image: '/team/member1.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' }
         ]
     },
     {
         id: '2',
-        name: 'Nattasha Julie',
-        role: 'Design, Australia',
+        name: 'Biswajit Mohanty',
+        role: 'Lead Architect, Odisha',
         image: '/team/member2.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' },
-            { platform: 'linkedin', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' },
+            { platform: 'linkedin', url: 'https://linkedin.com' }
         ]
     },
     {
         id: '3',
-        name: 'John Smith',
-        role: 'Design, Australia',
+        name: 'Priyanka Mishra',
+        role: 'Interior Specialist, Patia',
         image: '/team/member3.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' }
         ]
     },
     {
         id: '4',
-        name: 'Nora Owen',
-        role: 'Design, Australia',
+        name: 'Amitav Patnaik',
+        role: 'Project Manager, Bhubaneswar',
         image: '/team/member4.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' }
         ]
     },
     {
         id: '5',
-        name: 'Sofia Carter',
-        role: 'Design, Australia',
+        name: 'Sasmita Sahoo',
+        role: 'Creative Designer, Cuttack',
         image: '/team/member1.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' }
         ]
     },
     {
         id: '6',
-        name: 'Avery Jackson',
-        role: 'Design, Australia',
+        name: 'Rakesh Jena',
+        role: 'Site Supervisor, Infocity',
         image: '/team/member2.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' },
-            { platform: 'linkedin', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' },
+            { platform: 'linkedin', url: 'https://linkedin.com' }
         ]
     },
     {
         id: '7',
-        name: 'Luna James',
-        role: 'Design, Australia',
+        name: 'Anjali Rout',
+        role: 'Lighting Expert, Bhubaneswar',
         image: '/team/member3.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' }
         ]
     },
     {
         id: '8',
-        name: 'Gianna Mateo',
-        role: 'Design, Australia',
+        name: 'Deepak Behera',
+        role: 'Furniture Specialist, Odisha',
         image: '/team/member4.png',
         socials: [
-            { platform: 'facebook', url: '#' },
-            { platform: 'twitter', url: '#' }
+            { platform: 'facebook', url: 'https://facebook.com' },
+            { platform: 'twitter', url: 'https://twitter.com' }
         ]
     }
 ];

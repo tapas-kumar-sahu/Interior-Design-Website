@@ -9,40 +9,40 @@ import Button from '@/components/ui/Button';
 
 const plans = [
     {
-        title: "Design advices",
-        price: "29",
+        title: "Design Consultation",
+        price: "4,999",
         features: [
-            "General living space advices",
-            "Renovation advices",
-            "Interior design advices",
-            "Furniture reorganization",
-            "Up to 5 hours meetings"
+            "General living space advice",
+            "Renovation consultation",
+            "Interior design basic plan",
+            "Furniture layout suggestions",
+            "Up to 3 site visits"
         ],
         buttonVariant: "primary" as const
     },
     {
-        title: "Complete interior",
-        price: "39",
+        title: "Master Plan",
+        price: "24,999",
         features: [
-            "Complete home redesign",
-            "Interior and exterior works",
-            "Modular interior planning",
-            "Kitchen design",
-            "Garages organization"
+            "Complete home layout design",
+            "3D walkthrough of main areas",
+            "Modular kitchen planning",
+            "Lighting & electrical plan",
+            "Selection of materials & textures"
         ],
         buttonVariant: "dark" as const,
         featured: true,
-        badge: "Most Popular Plans"
+        badge: "Most Popular Plan"
     },
     {
-        title: "Furniture design",
-        price: "59",
+        title: "Full Turnkey Solution",
+        price: "99,999",
         features: [
-            "Furniture for living room",
-            "Furniture refurbishment",
-            "Sofas and amchairs",
-            "Tables and chairs",
-            "Kitchens"
+            "End-to-end execution",
+            "Custom furniture design",
+            "Premium finish selection",
+            "Vendor management",
+            "Post-delivery support"
         ],
         buttonVariant: "primary" as const
     }
@@ -83,10 +83,10 @@ export default function PricingPage() {
                                     </h3>
 
                                     <div className="flex items-start justify-center mb-8">
-                                        <span className="text-2xl font-display text-dark mt-2">$</span>
+                                        <span className="text-2xl font-display text-dark mt-2">₹</span>
                                         <span className="text-7xl font-display text-primary">{plan.price}</span>
                                     </div>
-                                    <span className="text-secondary font-display text-xl -mt-6 mb-8">/month</span>
+                                    <span className="text-secondary font-display text-xl -mt-6 mb-8">onwards</span>
 
                                     {plan.featured && (
                                         <div className="w-full relative mb-12">

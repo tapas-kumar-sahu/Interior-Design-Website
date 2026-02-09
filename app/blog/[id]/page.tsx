@@ -13,20 +13,20 @@ import Button from '@/components/ui/Button';
 // Mock data for blog posts
 const postsData: Record<string, any> = {
     '1': {
-        title: "Let's Get Solution for Building Construction Work",
-        date: "26 December, 2022",
+        title: "Modern Kitchen Design Trends in Bhubaneswar Homes",
+        date: "15 January, 2024",
         category: "Kitchen Design",
         mainImage: "/blog/blog1.jpg",
         contentImage: "/blog/latest-post.jpg",
-        tags: ["Kitchen", "Bedroom"]
+        tags: ["Kitchen", "Modern", "Bhubaneswar"]
     },
     'default': {
-        title: "Low Cost Latest Invented Interior Designing Ideas",
-        date: "22 December, 2022",
+        title: "The Evolution of Luxury Living in Odisha",
+        date: "26 January, 2024",
         category: "Interior Design",
         mainImage: "/blog/blog2.jpg",
         contentImage: "/blog/blog5.jpg",
-        tags: ["Interior", "Design"]
+        tags: ["Luxury", "Design", "Odisha"]
     }
 };
 
@@ -72,17 +72,17 @@ export default function BlogDetailPage() {
                                         </div>
                                         <div className="flex items-center justify-between text-secondary">
                                             <span>{post.date}</span>
-                                            <span>Interior / Design / Home</span>
+                                            <span>Interior / Design / Odisha</span>
                                         </div>
                                     </div>
 
                                     {/* Content Text */}
                                     <div className="space-y-6 text-secondary text-lg leading-relaxed">
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in. Praesent at nibh in mi fringilla mattis. Phasellus ut dolor odio. Aenean in the ipsum vel lectus bibendum commodo.
+                                            Designing a space in Bhubaneswar requires a unique understanding of both modern trends and local environmental conditions. From selecting materials that withstand the regional humidity to creating layouts that prioritize ventilation, every detail matters.
                                         </p>
                                         <p>
-                                            In nec sem suscipit, convallis leo vitae, lacinia nibh. Cras amet tellus lectus. Vivamus ipsum nunc, mattis quis nibh id, pellentesque arcu. Donec a pellentesque Cras erat enim, gravida non ante vitae,elequis convallis elit, in viverra felis.
+                                            In this article, we dive deep into how premium homes in areas like Patia and Jayadev Vihar are evolving to meet global standards while staying rooted in local aesthetics.
                                         </p>
                                     </div>
 
@@ -91,22 +91,22 @@ export default function BlogDetailPage() {
                                         <div className="relative z-10">
                                             <Quote className="w-16 h-16 text-primary mx-auto mb-6 rotate-180" />
                                             <p className="text-primary text-2xl md:text-3xl font-display italic leading-relaxed">
-                                                “The details are not the details. <br /> They make the design.”
+                                                “Good design is about creating spaces <br /> that reflect the soul of its inhabitants.”
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Secondary Heading & Text */}
                                     <div className="space-y-8">
-                                        <h2 className="text-4xl font-display text-dark">Design sprints are great</h2>
+                                        <h2 className="text-4xl font-display text-dark">Why Quality Matters</h2>
                                         <p className="text-secondary text-lg leading-relaxed">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquamsem vitae turpis dignissim maximus. Aliquam sollicitudin tellumassa, vbel maximus purus posuere in.
+                                            Choosing the right interior designer in Odisha can make the difference between a house and a true home.
                                         </p>
                                         <ul className="space-y-4">
                                             {[1, 2, 3].map((item) => (
                                                 <li key={item} className="flex gap-4 text-secondary text-lg">
                                                     <span className="text-primary font-display">{item}</span>
-                                                    <span>Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.</span>
+                                                    <span>{item === 1 ? "Premium material sourcing from trusted local vendors." : item === 2 ? "Expert site supervision for flawless execution." : "Transparent pricing with no hidden surprises."}</span>
                                                 </li>
                                             ))}
                                         </ul>
@@ -211,9 +211,9 @@ export default function BlogDetailPage() {
                                             <Link key={item} href="#" className="block group">
                                                 <div className="space-y-2">
                                                     <h4 className="text-dark font-display text-lg group-hover:text-primary transition-colors leading-tight">
-                                                        {item === 1 ? "We focus on Comfort and Elegance" : "We focus on Comfort and Elegance"}
+                                                        {item === 1 ? "Top Interior Colors for 2024" : item === 2 ? "How to Modernize Your Office Space" : "Small Home, Big Style: Creative Ideas"}
                                                     </h4>
-                                                    <p className="text-secondary text-sm text-right">06/02/2026</p>
+                                                    <p className="text-secondary text-sm text-right">08/02/2024</p>
                                                 </div>
                                                 <div className="h-px bg-primary/20 mt-6" />
                                             </Link>
@@ -225,7 +225,7 @@ export default function BlogDetailPage() {
                                 <div className="bg-light-bg p-10 rounded-[40px] space-y-8">
                                     <h3 className="text-2xl font-display text-dark">Categories</h3>
                                     <div className="space-y-6">
-                                        {["Decoration", "Door Windows", "Home Land", "Roof Installation"].map((cat, idx) => (
+                                        {["Decoration", "Luxury Interiors", "Modular Solutions", "Lighting Design"].map((cat, idx) => (
                                             <Link key={cat} href="#" className="flex flex-col gap-4 group">
                                                 <span className="text-secondary hover:text-primary transition-colors">{cat}</span>
                                                 {idx !== 3 && <div className="h-px bg-primary/20" />}

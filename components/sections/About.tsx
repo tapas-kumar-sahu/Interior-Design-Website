@@ -14,10 +14,10 @@ export default function About() {
                     <AnimateOnScroll direction="left" delay={0.2}>
                         <div className="space-y-8">
                             <h2 className="text-dark leading-tight">
-                                We Create The Art<br />Of Stylish Living Stylishly
+                                We Create The Art<br />Of Modern Living
                             </h2>
                             <p className="text-secondary leading-relaxed">
-                                It is a long established fact that a reader will be distracted by the of readable content of page when lookings at its layouts the points of using that it has a more-or-less normal.
+                                From luxury villas in Patia to corporate offices in Infocity, we bring world-class interior design excellence to the heart of Odisha. Our designs balance traditional aesthetics with contemporary functionality.
                             </p>
 
                             {/* Phone Contact */}
@@ -26,7 +26,7 @@ export default function About() {
                                     <Phone className="w-6 h-6 text-primary" />
                                 </div>
                                 <div>
-                                    <div className="text-2xl font-semibold text-dark mb-1">012345678</div>
+                                    <div className="text-2xl font-semibold text-dark mb-1">+91 977 777 7777</div>
                                     <p className="text-secondary text-sm">Call Us Anytime</p>
                                 </div>
                             </div>

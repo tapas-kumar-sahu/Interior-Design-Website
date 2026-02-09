@@ -11,47 +11,47 @@ import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
 const generalFaqs = [
     {
-        question: "What is the Hipcouch Interior Design Service?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "How do I start my interior design project with Interno?",
+        answer: "The process begins with an initial consultation where we discuss your vision, budget, and requirements. We then provide a customized design proposal specifically for your space in Bhubaneswar or across Odisha."
     },
     {
-        question: "So, how exactly does this work?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "What is the typical timeline for a complete home renovation?",
+        answer: "Timelines vary depending on the scope of work. Generally, a 3BHK apartment in Bhubaneswar takes about 45-60 days from design approval to handover."
     },
     {
-        question: "What cities do you currently operate in?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "Do you provide modular kitchen solutions in Odisha?",
+        answer: "Yes, we specialize in premium, weather-resistant modular kitchens tailored for the local climate of Odisha, using high-quality materials and intelligent storage solutions."
     },
     {
-        question: "Hipcouch Interior Design Service?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "What areas do you currently serve?",
+        answer: "We are based in Saheed Nagar, Bhubaneswar, and serve clients across the city (Patia, Infocity, Khandagiri, etc.) as well as Cuttack, Puri, and other major districts in Odisha."
     },
     {
-        question: "What kind of interior designers do you have?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "What sets Interno apart from other local designers in Bhubaneswar?",
+        answer: "Our commitment to premium quality, transparent pricing, and a blend of global design standards with local cultural aesthetics makes us the preferred choice for sophisticated homes."
     }
 ];
 
 const projectFaqs = [
     {
-        question: "How long does it take?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "Can I use my existing furniture in the new design?",
+        answer: "Absolutely. We can integrate your existing prized possessions into the new design through professional refurbishing or strategic placement to maintain sentimental value."
     },
     {
-        question: "Can I use my existing furnishings?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "What kind of materials do you use for Odisha's humid climate?",
+        answer: "We prioritize moisture-resistant plywood, anti-termite treatments, and high-quality coatings that are specifically tested for the environmental conditions of coastal Odisha."
     },
     {
-        question: "I put into redesigning my interior?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "Is there any warranty on the interior works?",
+        answer: "Yes, we provide an extensive warranty on all our custom furniture and modular fittings, ensuring peace of mind for our Bhubaneswar clients."
     },
     {
-        question: "What do your services cost?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "Do you handle the entire execution (Turnkey) yourself?",
+        answer: "Yes, our turnkey solution handles everything from plumbing and electrical to final decor, managed by our professional site supervisors in Bhubaneswar."
     },
     {
-        question: "Do you offer free consultations?",
-        answer: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary popular belief. There are many variations of passages of Lorem Ipsum available, but the majority randomised."
+        question: "How do you handle budget management for the project?",
+        answer: "We provide detailed, itemized quotes upfront with no hidden costs. Our team ensures that the design process stays within your agreed budget without compromising on quality."
     }
 ];
 

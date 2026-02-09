@@ -6,22 +6,22 @@ import AnimateOnScroll from '../ui/AnimateOnScroll';
 
 const testimonials = [
     {
-        name: 'Nattasha Mith',
-        location: 'Sydney, USA',
+        name: 'Nalinikanta Nayak',
+        location: 'Patia, Bhubaneswar',
         image: '/testimonials/person1.png',
-        text: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been.',
+        text: 'Interno transformed our Patia villa into a modern masterpiece. Their attention to detail and local sourcing was impressive.',
     },
     {
-        name: 'Raymond Galario',
-        location: 'Sydney, Australia',
+        name: 'Sasmita Roy',
+        location: 'Cuttack',
         image: '/testimonials/person2.png',
-        text: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled it to make a type book.',
+        text: 'The team understood exactly what we wanted for our Cuttack ancestral home renovation. Professional and highly creative!',
     },
     {
-        name: 'Benny Roll',
-        location: 'Sydney, New York',
+        name: 'Alok Patnaik',
+        location: 'Jayadev Vihar, Bhubaneswar',
         image: '/testimonials/person3.png',
-        text: 'Lorem Ipsum is simply dummy text of the typesetting industry. Ipsum has been scrambled.',
+        text: 'Best interior design firm in Odisha. They delivered our Infocity office project ahead of schedule with premium quality.',
     },
 ];
 

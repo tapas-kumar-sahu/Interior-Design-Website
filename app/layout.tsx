@@ -17,8 +17,8 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Interior Design - Transform Your Space",
-  description: "Professional interior design services to create beautiful, functional spaces that reflect your style.",
+  title: "Interno | Premium Interior Design in Bhubaneswar, Odisha",
+  description: "Bhubaneswar's leading interior design firm. We provide premium, custom interior solutions for homes and offices across Odisha. Transform your space with Interno.",
 };
 
 export default function RootLayout({

@@ -22,10 +22,10 @@ export default function Hero() {
                     <AnimateOnScroll delay={0.2}>
                         <div className="max-w-xl">
                             <h1 className="text-dark leading-tight mb-6 text-[50px] md:text-[65px] lg:text-[85px]">
-                                Let Your Home<br />Be Unique
+                                Your Dream Home<br />Starts Here
                             </h1>
                             <p className="text-secondary text-lg mb-10 max-w-sm md:max-w-md">
-                                There are many variations of the passages of lorem Ipsum fromavailable,variations of the passages.
+                                Exclusive interior design solutions tailored for the modern homes and offices of Bhubaneswar and Odisha.
                             </p>
                             <Button icon>
                                 Get Started

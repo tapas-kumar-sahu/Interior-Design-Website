@@ -5,19 +5,19 @@ import AnimateOnScroll from '../ui/AnimateOnScroll';
 const stats = [
     {
         number: '12',
-        label: 'Years Of Experiance',
+        label: 'Years of Experience',
     },
     {
         number: '85',
-        label: 'Success Project',
+        label: 'Success Projects',
     },
     {
         number: '15',
-        label: 'Active Project',
+        label: 'Active Projects',
     },
     {
         number: '95',
-        label: 'Happy CUstomers',
+        label: 'Happy Customers',
     },
 ];
 
