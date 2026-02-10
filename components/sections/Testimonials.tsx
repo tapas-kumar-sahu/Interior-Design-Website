@@ -4,28 +4,14 @@ import SectionHeading from '../ui/SectionHeading';
 import Image from 'next/image';
 import AnimateOnScroll from '../ui/AnimateOnScroll';
 
-const testimonials = [
-    {
-        name: 'Nalinikanta Nayak',
-        location: 'Patia, Bhubaneswar',
-        image: '/testimonials/person1.png',
-        text: 'Interno transformed our Patia villa into a modern masterpiece. Their attention to detail and local sourcing was impressive.',
-    },
-    {
-        name: 'Sasmita Roy',
-        location: 'Cuttack',
-        image: '/testimonials/person2.png',
-        text: 'The team understood exactly what we wanted for our Cuttack ancestral home renovation. Professional and highly creative!',
-    },
-    {
-        name: 'Alok Patnaik',
-        location: 'Jayadev Vihar, Bhubaneswar',
-        image: '/testimonials/person3.png',
-        text: 'Best interior design firm in Odisha. They delivered our Infocity office project ahead of schedule with premium quality.',
-    },
-];
+import prisma from '@/lib/prisma';
 
-export default function Testimonials() {
+export default async function Testimonials() {
+    const testimonials = await prisma.testimonial.findMany({
+        orderBy: { createdAt: 'desc' }
+    });
+
+    if (!testimonials || testimonials.length === 0) return null;
     return (
         <section className="section">
             <Container>
@@ -37,9 +23,9 @@ export default function Testimonials() {
                         />
                     </AnimateOnScroll>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {testimonials.map((testimonial, index) => (
+                        {testimonials.map((testimonial: any, index: number) => (
                             <AnimateOnScroll
-                                key={index}
+                                key={testimonial.id}
                                 delay={index * 0.15}
                                 distance={30}
                                 className="bg-white p-8 rounded-4xl"

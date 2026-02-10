@@ -4,28 +4,15 @@ import SectionHeading from '../ui/SectionHeading';
 import ArticleCard from '../ui/ArticleCard';
 import AnimateOnScroll from '../ui/AnimateOnScroll';
 
-const articles = [
-    {
-        title: "Modern Kitchen Design Trends in Bhubaneswar Homes",
-        date: '15 January, 2024',
-        image: '/articles/article1.jpg',
-        badge: 'Kitchen Design',
-    },
-    {
-        title: 'Maximizing Space in 3BHK Apartments in Patia',
-        date: '10 January, 2024',
-        image: '/articles/article2.jpg',
-        badge: 'Living Design',
-    },
-    {
-        title: 'Interior Solutions for Growing Startups in Infocity',
-        date: '05 January, 2024',
-        image: '/articles/article3.jpg',
-        badge: 'Interior Design',
-    },
-];
+import prisma from '@/lib/prisma';
 
-export default function Articles() {
+export default async function Articles() {
+    const articles = await prisma.post.findMany({
+        take: 3,
+        orderBy: { publishedAt: 'desc' }
+    });
+
+    if (!articles || articles.length === 0) return null;
     return (
         <section className="section">
             <Container>
@@ -38,15 +25,16 @@ export default function Articles() {
                 </AnimateOnScroll>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {articles.map((article, index) => (
+                    {articles.map((article: any, index: number) => (
                         <AnimateOnScroll
-                            key={index}
+                            key={article.id}
                             delay={index * 0.2}
                             distance={30}
                         >
                             <ArticleCard
+                                id={article.id}
                                 title={article.title}
-                                date={article.date}
+                                date={new Date(article.publishedAt).toLocaleDateString()}
                                 image={article.image}
                                 badge={article.badge}
                             />

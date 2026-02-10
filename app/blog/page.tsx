@@ -10,47 +10,33 @@ import PageHero from '@/components/ui/PageHero';
 import ArticleCard from '@/components/ui/ArticleCard';
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
-const blogArticles = [
-    {
-        title: "Modern Kitchen Design Trends in Bhubaneswar Homes",
-        date: '15 January, 2024',
-        image: '/blog/blog1.jpg',
-        badge: 'Kitchen Design',
-    },
-    {
-        title: 'Maximizing Space in 3BHK Apartments in Patia',
-        date: '10 January, 2024',
-        image: '/blog/blog2.jpg',
-        badge: 'Living Design',
-    },
-    {
-        title: 'Interior Solutions for Growing Startups in Infocity',
-        date: '05 January, 2024',
-        image: '/blog/blog3.jpg',
-        badge: 'Interior Design',
-    },
-    {
-        title: "Creative Lighting Ideas for Odisha's Festive Season",
-        date: '28 December, 2023',
-        image: '/blog/blog4.jpg',
-        badge: 'Kitchen Design',
-    },
-    {
-        title: 'Sustainable Interior Materials Available in Odisha',
-        date: '22 December, 2023',
-        image: '/blog/blog5.jpg',
-        badge: 'Living Design',
-    },
-    {
-        title: 'How to Choose the Right Color Palette for Your Home',
-        date: '15 December, 2023',
-        image: '/blog/blog6.jpg',
-        badge: 'Interior Design',
-    },
-];
+import Link from 'next/link';
+import { useEffect } from 'react';
+
+export const dynamic = 'force-dynamic';
 
 export default function BlogPage() {
     const [currentPage, setCurrentPage] = useState(1);
+    const [posts, setPosts] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const res = await fetch('/api/posts');
+                const data = await res.json();
+                setPosts(data);
+            } catch (error) {
+                console.error('Failed to fetch posts:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchPosts();
+    }, []);
+
+    const latestPost = posts.length > 0 ? posts[0] : null;
+    const otherPosts = posts.length > 1 ? posts.slice(1) : [];
 
     return (
         <>
@@ -72,37 +58,44 @@ export default function BlogPage() {
                             <h2 className="text-4xl md:text-5xl font-display text-dark mb-12">Latest Post</h2>
                         </AnimateOnScroll>
 
-                        <AnimateOnScroll direction="up" delay={0.4}>
-                            <div className="group border border-gray-200 rounded-[50px] p-6 lg:p-12 transition-all duration-300 hover:shadow-xl hover:bg-light-bg cursor-pointer">
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                    <div className="relative aspect-video lg:aspect-square overflow-hidden rounded-[30px] lg:rounded-[40px]">
-                                        <Image
-                                            src="/blog/latest-post.jpg"
-                                            alt="Latest Post"
-                                            fill
-                                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                        />
-                                    </div>
-                                    <div className="space-y-6">
-                                        <h3 className="text-3xl md:text-4xl font-display text-dark leading-tight">
-                                            The Evolution of Luxury <br className="hidden lg:block" /> Living in Bhubaneswar
-                                        </h3>
-                                        <p className="text-secondary text-lg leading-relaxed">
-                                            Discover how modern architecture and premium interior design are reshaping the skyline of Bhubaneswar, from the bustling streets of Patia to the serene corners of Jayadev Vihar.
-                                        </p>
-                                        <p className="text-secondary text-lg leading-relaxed">
-                                            We explore the balance between traditional Odia aesthetics and contemporary global minimalist trends.
-                                        </p>
-                                        <div className="flex items-center justify-between pt-4">
-                                            <p className="text-secondary">26 January, 2024</p>
-                                            <div className="w-14 h-14 rounded-full bg-light-bg flex items-center justify-center transition-colors group-hover:bg-white text-dark shadow-sm">
-                                                <ChevronRight className="w-6 h-6" />
+                        {loading ? (
+                            <div className="flex justify-center py-12">
+                                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                            </div>
+                        ) : latestPost ? (
+                            <AnimateOnScroll direction="up" delay={0.4}>
+                                <Link href={`/blog/${latestPost.id}`} className="block">
+                                    <div className="group border border-gray-200 rounded-[50px] p-6 lg:p-12 transition-all duration-300 hover:shadow-xl hover:bg-light-bg cursor-pointer">
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                            <div className="relative aspect-video lg:aspect-square overflow-hidden rounded-[30px] lg:rounded-[40px]">
+                                                <Image
+                                                    src={latestPost.image}
+                                                    alt={latestPost.title}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                                />
+                                            </div>
+                                            <div className="space-y-6">
+                                                <h3 className="text-3xl md:text-4xl font-display text-dark leading-tight">
+                                                    {latestPost.title}
+                                                </h3>
+                                                <p className="text-secondary text-lg leading-relaxed">
+                                                    {latestPost.excerpt}
+                                                </p>
+                                                <div className="flex items-center justify-between pt-4">
+                                                    <p className="text-secondary">{new Date(latestPost.publishedAt).toLocaleDateString()}</p>
+                                                    <div className="w-14 h-14 rounded-full bg-light-bg flex items-center justify-center transition-colors group-hover:bg-white text-dark shadow-sm">
+                                                        <ChevronRight className="w-6 h-6" />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </AnimateOnScroll>
+                                </Link>
+                            </AnimateOnScroll>
+                        ) : (
+                            <p className="text-center text-secondary">No blog posts found.</p>
+                        )}
                     </Container>
                 </section>
 
@@ -114,15 +107,16 @@ export default function BlogPage() {
                         </AnimateOnScroll>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                            {blogArticles.map((article, index) => (
+                            {otherPosts.map((article, index) => (
                                 <AnimateOnScroll
-                                    key={index}
+                                    key={article.id}
                                     delay={(index % 3) * 0.1}
                                     distance={20}
                                 >
                                     <ArticleCard
+                                        id={article.id}
                                         title={article.title}
-                                        date={article.date}
+                                        date={new Date(article.publishedAt).toLocaleDateString()}
                                         image={article.image}
                                         badge={article.badge}
                                     />

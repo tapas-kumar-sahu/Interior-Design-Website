@@ -4,7 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 
+import Link from 'next/link';
+
 interface ArticleCardProps {
+    id?: string;
     title: string;
     date: string;
     image: string;
@@ -14,6 +17,7 @@ interface ArticleCardProps {
 }
 
 export default function ArticleCard({
+    id,
     title,
     date,
     image,
@@ -21,9 +25,9 @@ export default function ArticleCard({
     href = '#',
     className = ''
 }: ArticleCardProps) {
-    return (
+    const cardContent = (
         <div
-            className={`group rounded-[40px] p-6 transition-all duration-300 cursor-pointer border border-gray-200 hover:shadow-lg hover:bg-light-bg ${className}`}
+            className={`group rounded-[40px] p-6 transition-all duration-300 cursor-pointer border border-gray-200 hover:shadow-lg hover:bg-light-bg h-full ${className}`}
         >
             {/* Article Image with Badge */}
             <div className="relative aspect-[1.5/1] mb-6 rounded-[30px] overflow-hidden">
@@ -45,7 +49,7 @@ export default function ArticleCard({
             </h3>
 
             {/* Date & Arrow */}
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mt-auto">
                 <p className="text-secondary text-sm">{date}</p>
                 <div className="w-10 h-10 rounded-full transition-colors flex items-center justify-center bg-light-bg group-hover:bg-white">
                     <ChevronRight className="w-5 h-5 text-dark" />
@@ -53,4 +57,10 @@ export default function ArticleCard({
             </div>
         </div>
     );
+
+    if (id) {
+        return <Link href={`/blog/${id}`}>{cardContent}</Link>;
+    }
+
+    return cardContent;
 }
