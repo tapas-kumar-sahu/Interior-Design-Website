@@ -3,32 +3,18 @@ import Image from 'next/image';
 import Container from '../ui/Container';
 import SectionHeading from '../ui/SectionHeading';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 import AnimateOnScroll from '../ui/AnimateOnScroll';
 
-const projects = [
-    {
-        title: 'Modern Kitchan',
-        category: 'Decor / Artchitecture',
-        image: '/projects/project1.jpg',
-    },
-    {
-        title: 'Modern Kitchan',
-        category: 'Decor / Artchitecture',
-        image: '/projects/project2.jpg',
-    },
-    {
-        title: 'Modern Kitchan',
-        category: 'Decor / Artchitecture',
-        image: '/projects/project3.jpg',
-    },
-    {
-        title: 'Modern Kitchan',
-        category: 'Decor / Artchitecture',
-        image: '/projects/project4.jpg',
-    },
-];
+import prisma from '@/lib/prisma';
 
-export default function Projects() {
+export default async function Projects() {
+    const projects = await prisma.project.findMany({
+        take: 4,
+        orderBy: { createdAt: 'desc' }
+    });
+
+    if (!projects || projects.length === 0) return null;
     return (
         <section className="section">
             <Container>
@@ -40,17 +26,17 @@ export default function Projects() {
                     />
                 </AnimateOnScroll>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {projects.map((project, index) => (
+                    {projects.map((project: any, index: number) => (
                         <AnimateOnScroll
-                            key={index}
+                            key={project.id}
                             delay={index * 0.2}
                             direction={index % 2 === 0 ? 'left' : 'right'}
                         >
-                            <div className="group cursor-pointer">
+                            <Link href={`/project/${project.id}`} className="group cursor-pointer block">
                                 {/* Project Image */}
                                 <div className="relative h-80 mb-6 rounded-tr-[60px] rounded-bl-[60px] overflow-hidden">
                                     <Image
-                                        src={project.image}
+                                        src={project.mainImage}
                                         alt={project.title}
                                         fill
                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -67,7 +53,7 @@ export default function Projects() {
                                         <ArrowRight className="w-5 h-5 text-dark group-hover:text-white transition-colors" />
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </AnimateOnScroll>
                     ))}
                 </div>

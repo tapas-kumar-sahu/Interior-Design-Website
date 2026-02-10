@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight, ArrowRight } from 'lucide-react';
@@ -10,94 +10,34 @@ import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/ui/PageHero';
 import AnimateOnScroll from '@/components/ui/AnimateOnScroll';
 
-const categories = ['Bathroom', 'Bed Room', 'Kitchen', 'Living Area'];
+const categories = ['All', 'Bathroom', 'Bed Room', 'Kitchen', 'Living Area', 'Residential Interiors', 'Commercial Interiors'];
 
-const projectsData = [
-    {
-        id: 1,
-        title: 'Luxury Villa in Patia',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project1.jpg',
-    },
-    {
-        id: 2,
-        title: 'Modern Apartment in Jayadev Vihar',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project2.jpg',
-    },
-    {
-        id: 3,
-        title: 'Cozy Residency in Khandagiri',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project3.jpg',
-    },
-    {
-        id: 4,
-        title: 'Urban Suite in Chandrasekharpur',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project4.jpg',
-    },
-    {
-        id: 5,
-        title: 'Penthouse Bloom in Nayapalli',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project1.jpg',
-    },
-    {
-        id: 6,
-        title: 'Elite Living in Sahid Nagar',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project2.jpg',
-    },
-    {
-        id: 7,
-        title: 'Serene Home in Sailashree Vihar',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project3.jpg',
-    },
-    {
-        id: 8,
-        title: 'Majestic Manor in Rasulgarh',
-        category: 'Bed Room',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project4.jpg',
-    },
-    // Adding some fake data for other categories
-    {
-        id: 9,
-        title: 'Modern Spa in Infocity',
-        category: 'Bathroom',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project1.jpg',
-    },
-    {
-        id: 10,
-        title: 'Premium Kitchen in Patia Phase 2',
-        category: 'Kitchen',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project2.jpg',
-    },
-    {
-        id: 11,
-        title: 'Boutique Office in District Center',
-        category: 'Living Area',
-        subCategory: 'Decor / Architecture',
-        image: '/projects/project3.jpg',
-    }
-];
+export const dynamic = 'force-dynamic';
 
-export default function ProjectPage() {
-    const [activeCategory, setActiveCategory] = useState('Bed Room');
+export default function ProjectsPage() {
+    const [activeCategory, setActiveCategory] = useState('All');
     const [currentPage, setCurrentPage] = useState(1);
+    const [projects, setProjects] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
 
-    const filteredProjects = projectsData.filter(p => p.category === activeCategory);
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const res = await fetch('/api/projects');
+                const data = await res.json();
+                setProjects(data);
+            } catch (error) {
+                console.error('Failed to fetch projects:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchProjects();
+    }, []);
+
+    const filteredProjects = activeCategory === 'All'
+        ? projects
+        : projects.filter(p => p.category === activeCategory);
 
     return (
         <>
@@ -138,41 +78,50 @@ export default function ProjectPage() {
                         </AnimateOnScroll>
 
                         {/* Projects Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-16">
-                            {filteredProjects.map((project, index) => (
-                                <AnimateOnScroll
-                                    key={`${project.id}-${activeCategory}`}
-                                    delay={(index % 4) * 0.1}
-                                    distance={30}
-                                >
-                                    <div className="group cursor-pointer">
-                                        <div className="relative overflow-hidden mb-6 rounded-t-[30px] rounded-b-none lg:rounded-none">
-                                            {/* Dynamic Height Simulation for the masonry feel */}
-                                            <div className={`relative w-full ${index % 4 === 1 || index % 4 === 2 ? 'aspect-4/5' : 'aspect-square'}`}>
-                                                <Image
-                                                    src={project.image}
-                                                    alt={project.title}
-                                                    fill
-                                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                                />
+                        {loading ? (
+                            <div className="flex justify-center py-24">
+                                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                            </div>
+                        ) : filteredProjects.length === 0 ? (
+                            <div className="text-center py-24">
+                                <p className="text-secondary">No projects found for this category.</p>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-16">
+                                {filteredProjects.map((project, index) => (
+                                    <AnimateOnScroll
+                                        key={`${project.id}`}
+                                        delay={(index % 4) * 0.1}
+                                        distance={30}
+                                    >
+                                        <div className="group cursor-pointer">
+                                            <div className="relative overflow-hidden mb-6 rounded-t-[30px] rounded-b-none lg:rounded-none">
+                                                <div className={`relative w-full ${index % 4 === 1 || index % 4 === 2 ? 'aspect-4/5' : 'aspect-square'}`}>
+                                                    <Image
+                                                        src={project.mainImage}
+                                                        alt={project.title}
+                                                        fill
+                                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-between">
+                                                <div>
+                                                    <h3 className="text-2xl font-display text-dark">{project.title}</h3>
+                                                    <p className="text-secondary">{project.category}</p>
+                                                </div>
+                                                <Link
+                                                    href={`/project/${project.id}`}
+                                                    className="w-12 h-12 rounded-full bg-light-bg flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300"
+                                                >
+                                                    <ArrowRight className="w-5 h-5 text-dark" />
+                                                </Link>
                                             </div>
                                         </div>
-                                        <div className="flex items-center justify-between">
-                                            <div>
-                                                <h3 className="text-2xl font-display text-dark">{project.title}</h3>
-                                                <p className="text-secondary">{project.subCategory}</p>
-                                            </div>
-                                            <Link
-                                                href={`/project/${project.id}`}
-                                                className="w-12 h-12 rounded-full bg-light-bg flex items-center justify-center group-hover:bg-white group-hover:shadow-md transition-all duration-300"
-                                            >
-                                                <ArrowRight className="w-5 h-5 text-dark" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </AnimateOnScroll>
-                            ))}
-                        </div>
+                                    </AnimateOnScroll>
+                                ))}
+                            </div>
+                        )}
 
                         {/* Pagination */}
                         <div className="flex justify-center items-center gap-4">

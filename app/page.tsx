@@ -10,6 +10,8 @@ import Stats from '@/components/sections/Stats';
 import Articles from '@/components/sections/Articles';
 import Newsletter from '@/components/sections/Newsletter';
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <>

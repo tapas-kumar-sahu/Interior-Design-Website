@@ -1,0 +1,66 @@
+// Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  client      String
+  category    String
+  tags        String[]
+  date        String
+  description String[]
+  mainImage   String
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model Post {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  content      String
+  excerpt      String
+  image        String
+  badge        String
+  author       String
+  publishedAt  DateTime @default(now())
+}
+
+model TeamMember {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  memberId String @unique
+  name     String
+  role     String
+  image    String
+  bio      String
+  email    String
+  phone    String
+  website  String
+  socials  Json   // [{ platform: string, url: string }]
+}
+
+model Lead {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  subject   String?
+  message   String
+  status    String   @default("NEW")
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  location  String
+  image     String
+  text      String
+  createdAt DateTime @default(now())
+}
