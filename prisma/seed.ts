@@ -14,6 +14,21 @@ async function main() {
     console.log('Team members cleared.')
     await prisma.testimonial.deleteMany({})
     console.log('Testimonials cleared.')
+    await prisma.user.deleteMany({})
+    console.log('Users cleared.')
+
+    // Seed Admin User
+    console.log('Seeding admin user...')
+    const bcrypt = require('bcryptjs')
+    const hashedPassword = await bcrypt.hash('admin123', 10)
+    await prisma.user.create({
+        data: {
+            name: 'Interno Admin',
+            email: 'admin@interno.in',
+            password: hashedPassword,
+            role: 'ADMIN'
+        }
+    })
 
     // Seed Projects
     console.log('Seeding projects...')

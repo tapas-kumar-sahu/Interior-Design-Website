@@ -11,6 +11,7 @@ interface ButtonProps {
     onClick?: () => void;
     type?: 'button' | 'submit' | 'reset';
     className?: string;
+    disabled?: boolean;
 }
 
 export default function Button({
@@ -19,7 +20,8 @@ export default function Button({
     icon = false,
     onClick,
     type = 'button',
-    className = ''
+    className = '',
+    disabled = false
 }: ButtonProps) {
     const baseStyles = 'btn';
     const variantStyles = {
@@ -32,7 +34,8 @@ export default function Button({
         <motion.button
             type={type}
             onClick={onClick}
-            className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+            disabled={disabled}
+            className={`${baseStyles} ${variantStyles[variant]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
